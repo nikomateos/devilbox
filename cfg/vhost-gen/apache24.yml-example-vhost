@@ -165,6 +165,11 @@ features:
         SetHandler proxy:fcgi://__PHP_ADDR__:__PHP_PORT__
     </FilesMatch>
 
+    <FilesMatch \.asp$>
+        Require all granted
+        SetHandler proxy:fcgi://__PHP_ADDR__:__PHP_PORT__
+    </FilesMatch>
+
     <Proxy "fcgi://__PHP_ADDR__:__PHP_PORT__/">
         ProxySet timeout=__PHP_TIMEOUT__
         ProxySet connectiontimeout=__PHP_TIMEOUT__
